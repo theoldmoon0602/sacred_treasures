@@ -1,0 +1,32 @@
+
+extends layout
+block vars
+  -var title="情報工学科三種の神器"
+
+block content
+    section.hero.is-info
+      .hero-body
+        .container
+          h1.title= title
+    .columns.is-mobile
+      .column
+        .section
+          .content.is-size-1#good_nums 0
+          .box.buttons.is-centered
+            button.button.is-success.is-large#good Good
+      .column
+        .section
+          .content.is-size-1#bad_nums 0
+          .box.buttons.is-centered
+            button.button.is-danger.is-large#bad Bad
+    .section
+      .field
+        label.label Message
+        .control
+          textarea.textarea(placeholder='comment here')#comment
+      .field
+        .control
+          button.button.is-link#send_button Send
+    script(src='/socketio/socket.io.js')
+    script(src='/javascripts/socket.js')
+

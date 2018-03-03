@@ -1,0 +1,28 @@
+extends layout
+block vars
+  -var title="flag{congrats-to-find-this-page-please-do-not-prevent-my-presentation-!}"
+
+block content
+    section.hero.is-info
+      .hero-body
+        .container
+          h1.title= title
+    section.section
+      h3.title.is-3 page:
+        span#page
+      h3.title.is-3 good:
+        span#good_nums 0
+      h3.title.is-3 bad:
+        span#bad_nums 0
+      button.button.is-large#next_page Next Page
+      button.button.is-large#prev_page Prev Page
+    section.section
+      h3.title.is-3 Comments
+      table.table#comment_table
+        tbody
+          tr
+            th Page
+            th Comment
+    script(src='/socketio/socket.io.js')
+    script(src='/javascripts/admin.js')
+
